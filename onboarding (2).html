@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Client Onboarding — Digitera Levi</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0f0a1a;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);--ink:#f6f1ff;--mute:#b9aed0;--lilac:#a98af0;--gold:#e8c05a;--fld:rgba(255,255,255,.05)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#faf5ea;--card:rgba(255,255,255,.9);--line:#e2d6bd;--ink:#2a1f3d;--mute:#6b6080;--lilac:#7d56cf;--gold:#b8861b;--fld:#fff}}
+:root[data-theme="light"]{--bg:#faf5ea;--card:rgba(255,255,255,.9);--line:#e2d6bd;--ink:#2a1f3d;--mute:#6b6080;--lilac:#7d56cf;--gold:#b8861b;--fld:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.3;z-index:0;animation:fl 14s ease-in-out infinite}
+.o1{width:260px;height:260px;background:var(--lilac);top:-80px;right:-80px}.o2{width:240px;height:240px;background:var(--gold);bottom:-80px;left:-80px;animation-delay:-6s}
+@keyframes fl{50%{transform:translate(24px,30px) scale(1.12)}}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:30px 18px 50px}
+.brand{text-align:center;color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+h1{text-align:center;font-size:27px;line-height:1.15;margin:10px 0 8px}
+.lead{text-align:center;color:var(--mute);font-size:14.5px;margin:0 0 22px}
+.bar{height:4px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:6px}
+.bar i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--lilac),var(--gold));transition:width .5s}
+.stp{font-size:12px;color:var(--mute);text-align:right;margin-bottom:14px}
+.panel{display:none;animation:in .5s}.panel.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;backdrop-filter:blur(10px)}
+h2{margin:0 0 4px;font-size:19px}.sh{color:var(--mute);font-size:13.5px;margin:0 0 16px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+label small{font-weight:400;color:var(--mute)}
+input,textarea,select{width:100%;background:var(--fld);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:13px;font:inherit;font-size:15px;outline:none;transition:border .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,192,90,.2)}
+textarea{min-height:130px;resize:vertical}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{cursor:pointer;border:1px solid var(--line);background:var(--fld);border-radius:14px;padding:13px 10px;text-align:center;font-size:13px;transition:.2s;user-select:none}
+.opt svg{display:block;margin:0 auto 6px;color:var(--lilac)}
+.opt.sel{border-color:var(--gold);background:rgba(232,192,90,.12);transform:translateY(-2px)}
+.opt.sel svg{color:var(--gold)}
+.chk{display:flex;flex-wrap:wrap;gap:8px}
+.chk .opt{padding:8px 13px;border-radius:99px}
+.nav{display:flex;gap:10px;margin-top:18px}
+.b{flex:1;border:0;border-radius:14px;padding:15px;font:inherit;font-weight:700;cursor:pointer;color:var(--ink);background:var(--card);border:1px solid var(--line)}
+.b.go{background:linear-gradient(135deg,var(--lilac),var(--gold));color:#1a1030;border:0}
+.err{color:#ff7a8a;font-size:13px;margin-top:10px;min-height:18px}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--fld);border:1px solid var(--line);border-radius:12px;padding:14px;font:13px/1.55 ui-monospace,Menlo,monospace;max-height:340px;overflow:auto;margin:0 0 6px}
+.ok{text-align:center;color:var(--gold);font-size:13px;min-height:18px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<div class="wrap">
+  <div class="brand">Digitera Levi · Client Onboarding</div>
+  <h1>Let's build something <span style="color:var(--gold)">exceptional.</span></h1>
+  <p class="lead">Takes about 5 minutes. The clearer your answers, the faster and better I can deliver.</p>
+  <div class="bar"><i id="pb"></i></div><div class="stp" id="st">Step 1 of 4</div>
+
+  <div class="panel on" data-s="1"><div class="card">
+    <h2>About you</h2><p class="sh">So I know who I'm building for.</p>
+    <label>Full name</label><input id="name" autocomplete="name" placeholder="Your name">
+    <label>Business / brand name <small>(or "personal")</small></label><input id="brand" placeholder="e.g. Maria's Bakeshop">
+    <label>Best way to reach you</label><input id="contact" placeholder="Messenger link, phone or email">
+    <label>What does your business do?</label><textarea id="about" style="min-height:90px" placeholder="Short description of what you sell or offer"></textarea>
+  </div></div>
+
+  <div class="panel" data-s="2"><div class="card">
+    <h2>What do you need?</h2><p class="sh">Pick the main service you want.</p>
+    <div class="opts" id="svc"></div>
+    <label>Main goal <small>(what should this project achieve?)</small></label>
+    <input id="goal" placeholder="e.g. Get more orders, look more professional, automate replies">
+    <label>Who is your ideal customer?</label>
+    <input id="aud" placeholder="Age, location, what they struggle with">
+  </div></div>
+
+  <div class="panel" data-s="3"><div class="card">
+    <h2>Your instructions</h2><p class="sh">This is the most important part. Tell me everything. No detail is too small.</p>
+    <label>Describe exactly what you want me to build</label>
+    <textarea id="inst" placeholder="Pages/sections you want, how it should work, what customers should be able to do, tone of voice..."></textarea>
+    <label>Features you want</label>
+    <div class="chk" id="feat"></div>
+    <label>Websites or apps you like <small>(inspiration links)</small></label>
+    <input id="ref" placeholder="Paste links, separated by commas">
+    <label>Logo, photos &amp; content <small>(Google Drive / Canva / Cloudinary link)</small></label>
+    <input id="assets" placeholder="Paste a shareable link to your files">
+    <label>Brand colors &amp; style</label>
+    <input id="style" placeholder="e.g. Elegant gold &amp; cream, modern, playful">
+    <label>Do you already have a domain or website?</label>
+    <input id="dom" placeholder="Paste it here, or write 'none yet'">
+  </div></div>
+
+  <div class="panel" data-s="4"><div class="card">
+    <h2>Timeline &amp; budget</h2><p class="sh">So I can plan properly and propose the right package.</p>
+    <label>When do you need it?</label>
+    <select id="when"><option value="">Select</option><option>ASAP (within 3 days)</option><option>Within 1 week</option><option>Within 2 weeks</option><option>Within 1 month</option><option>Flexible</option></select>
+    <label>Budget range</label>
+    <select id="bud"><option value="">Select</option><option>Under ₱2,000</option><option>₱2,000 – ₱5,000</option><option>₱5,000 – ₱10,000</option><option>₱10,000 – ₱25,000</option><option>₱25,000+</option><option>Not sure yet. Recommend something</option></select>
+    <label>Anything else I should know? <small>(optional)</small></label>
+    <textarea id="more" style="min-height:90px"></textarea>
+  </div></div>
+
+  <div class="panel" data-s="5"><div class="card">
+    <h2>Your project brief</h2><p class="sh">Review it, then submit. I'll reply with the next steps.</p>
+    <pre id="out"></pre><div class="ok" id="ok"></div>
+    <button class="b go" id="sub" style="width:100%;margin-bottom:10px">Submit my project</button>
+    <div class="nav" style="margin-top:0"><button class="b" id="cp">Copy brief</button><button class="b" id="ms">Send on Messenger</button></div>
+  </div></div>
+
+  <div class="panel" data-s="6"><div class="card" style="text-align:center"><h2>Thank you. Your brief is in.</h2><p class="sh" style="margin:8px 0 0">I received your project details and will message you with the next steps very soon.</p></div></div>
+
+  <div class="err" id="err"></div>
+  <div class="nav" id="nv"><button class="b" id="bk" style="display:none">Back</button><button class="b go" id="nx">Continue</button></div>
+</div>
+<script>
+var I=function(d){return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>'};
+var SV=[["Website / Online Store",I('<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/>')],["Sales / Landing Page",I('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>')],["Digital Invitation",I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>')],["Custom App / Automation",I('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>')],["Link-in-Bio / Portfolio",I('<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>')],["Not sure yet",I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5"/>')]];
+var FT=["Online payments","Order / booking form","AI chatbot","Admin dashboard","Inventory tracking","Login / accounts","Messenger integration","Animations","Multi-language","Analytics"];
+var svc="",feat={},s=1;
+var sg=document.getElementById("svc");
+SV.forEach(function(v){var d=document.createElement("div");d.className="opt";d.innerHTML=v[1]+v[0];d.onclick=function(){svc=v[0];[].forEach.call(sg.children,function(c){c.classList.remove("sel")});d.classList.add("sel")};sg.appendChild(d)});
+var fg=document.getElementById("feat");
+FT.forEach(function(f){var d=document.createElement("div");d.className="opt";d.textContent=f;d.onclick=function(){feat[f]=!feat[f];d.classList.toggle("sel")};fg.appendChild(d)});
+function v(i){return document.getElementById(i).value.trim()}
+function show(n){s=n;[].forEach.call(document.querySelectorAll(".panel"),function(p){p.classList.toggle("on",+p.dataset.s===n)});
+document.getElementById("pb").style.width=(n>=5?100:n*25)+"%";document.getElementById("st").textContent=n<5?"Step "+n+" of 4":(n==5?"Ready to send":"Sent");
+document.getElementById("bk").style.display=n>1?"block":"none";document.getElementById("nv").style.display=n>=5?"none":"flex";
+document.getElementById("nx").textContent=n==4?"Generate my brief":"Continue";document.getElementById("err").textContent="";window.scrollTo({top:0,behavior:"smooth"})}
+function chk(){if(s==1&&(!v("name")||!v("contact")))return "Please add your name and how I can reach you.";
+if(s==2&&!svc)return "Please choose the service you need.";if(s==3&&v("inst").length<20)return "Please describe what you want in a bit more detail.";
+if(s==4&&(!v("when")||!v("bud")))return "Please select your timeline and budget.";return ""}
+function brief(){var f=Object.keys(feat).filter(function(k){return feat[k]}).join(", ")||"—";
+return ["PROJECT BRIEF","Name: "+v("name"),"Brand: "+(v("brand")||"—"),"Contact: "+v("contact"),"About: "+(v("about")||"—"),"","Service: "+svc,"Goal: "+(v("goal")||"—"),"Audience: "+(v("aud")||"—"),"","Instructions: "+v("inst"),"Features: "+f,"Inspiration: "+(v("ref")||"—"),"Assets: "+(v("assets")||"—"),"Style: "+(v("style")||"—"),"Domain: "+(v("dom")||"—"),"","Deadline: "+v("when"),"Budget: "+v("bud"),"Notes: "+(v("more")||"—")].join("\n")}
+document.getElementById("nx").onclick=function(){var e=chk();if(e){document.getElementById("err").textContent=e;return}
+if(s==4)document.getElementById("out").textContent=brief();show(s+1)};
+document.getElementById("bk").onclick=function(){show(s-1)};
+function cp(){var t=document.getElementById("out").textContent,o=document.getElementById("ok");
+try{navigator.clipboard.writeText(t).then(function(){o.textContent="Copied. Paste it in Messenger."},fb)}catch(x){fb()}
+function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");o.textContent="Copied. Paste it in Messenger."}catch(x){o.textContent="Select the text above and copy it manually."}a.remove()}}
+document.getElementById("cp").onclick=cp;
+document.getElementById("ms").onclick=function(){cp();window.open("https://m.me/118441451362301","_blank")};
+var FORM_ENDPOINT=""; // paste your Formspree URL here (https://formspree.io/f/xxxx)
+document.getElementById("sub").onclick=function(){var o=document.getElementById("ok"),b=this;
+if(!FORM_ENDPOINT){o.textContent="Online submit isn't connected yet. Please use Copy brief + Messenger.";return}
+b.disabled=true;b.textContent="Sending...";
+fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:v("name"),brand:v("brand"),contact:v("contact"),service:svc,deadline:v("when"),budget:v("bud"),_subject:"New project brief: "+v("name"),message:document.getElementById("out").textContent})})
+.then(function(r){if(!r.ok)throw 0;show(6)}).catch(function(){b.disabled=false;b.textContent="Submit my project";o.textContent="Couldn't send. Please use Copy brief + Messenger."})};
+</script>
+</body>
+</html>
