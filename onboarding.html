@@ -137,11 +137,13 @@ try{navigator.clipboard.writeText(t).then(function(){o.textContent="Copied. Past
 function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");o.textContent="Copied. Paste it in Messenger."}catch(x){o.textContent="Select the text above and copy it manually."}a.remove()}}
 document.getElementById("cp").onclick=cp;
 document.getElementById("ms").onclick=function(){cp();window.open("https://m.me/118441451362301","_blank")};
-var FORM_ENDPOINT=""; // paste your Formspree URL here (https://formspree.io/f/xxxx)
+var SUPABASE_URL="https://bffsjsdarfvavhmbfzlh.supabase.co";
+var SUPABASE_ANON_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
+function hd(){var h={"Content-Type":"application/json",apikey:SUPABASE_ANON_KEY,Prefer:"return=minimal"};if(SUPABASE_ANON_KEY.indexOf("eyJ")===0)h.Authorization="Bearer "+SUPABASE_ANON_KEY;return h}
 document.getElementById("sub").onclick=function(){var o=document.getElementById("ok"),b=this;
-if(!FORM_ENDPOINT){o.textContent="Online submit isn't connected yet. Please use Copy brief + Messenger.";return}
+if(!SUPABASE_URL||!SUPABASE_ANON_KEY){o.textContent="Online submit isn't connected yet. Please use Copy brief + Messenger.";return}
 b.disabled=true;b.textContent="Sending...";
-fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:v("name"),brand:v("brand"),contact:v("contact"),service:svc,deadline:v("when"),budget:v("bud"),_subject:"New project brief: "+v("name"),message:document.getElementById("out").textContent})})
+fetch(SUPABASE_URL+"/rest/v1/client_briefs",{method:"POST",headers:hd(),body:JSON.stringify({name:v("name"),brand:v("brand"),contact:v("contact"),service:svc,deadline:v("when"),budget:v("bud"),brief:document.getElementById("out").textContent})})
 .then(function(r){if(!r.ok)throw 0;show(6)}).catch(function(){b.disabled=false;b.textContent="Submit my project";o.textContent="Couldn't send. Please use Copy brief + Messenger."})};
 </script>
 </body>
