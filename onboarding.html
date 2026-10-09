@@ -78,15 +78,18 @@ pre{white-space:pre-wrap;word-break:break-word;background:rgba(0,0,0,.35);border
     <label>Business / brand name <small>(or "personal")</small></label><input id="brand" placeholder="e.g. Maria's Bakeshop">
     <label>Best way to reach you</label><input id="contact" placeholder="Messenger link, phone or email">
     <label>What does your business do?</label><textarea id="about" style="min-height:90px" placeholder="Short description of what you sell or offer"></textarea>
+    <label>Existing website, Facebook or Instagram <small>(paste link, or "none yet")</small></label><input id="online" placeholder="Link to your page, or 'none yet'">
   </div></div>
 
   <div class="panel" data-s="2"><div class="card">
     <h2>What do you need?</h2><p class="sh">Pick the main service you want.</p>
     <div class="opts" id="svc"></div>
-    <label>Main goal <small>(what should this project achieve?)</small></label>
+    <label>Main goal of the website <small>(pick all that apply)</small></label><div class="chk" id="goals"></div>
+    <label>Anything specific you want to achieve? <small>(optional)</small></label>
     <input id="goal" placeholder="e.g. Get more orders, look more professional, automate replies">
     <label>Who is your ideal customer?</label>
     <input id="aud" placeholder="Age, location, what they struggle with">
+    <label>Pages you need <small>(pick all that apply)</small></label><div class="chk" id="pgs"></div>
   </div></div>
 
   <div class="panel" data-s="3"><div class="card">
@@ -101,8 +104,14 @@ pre{white-space:pre-wrap;word-break:break-word;background:rgba(0,0,0,.35);border
     <input id="assets" placeholder="Paste a shareable link to your files">
     <label>Brand colors &amp; style</label>
     <input id="style" placeholder="e.g. Elegant gold &amp; cream, modern, playful">
+    <label>Do you already have a logo and brand colors?</label>
+    <select id="logo"><option value="">Select</option><option>Yes, I have both</option><option>Logo only</option><option>Wala pa, please help me create</option></select>
+    <label>Photos, product pictures and text/description</label>
+    <select id="cont"><option value="">Select</option><option>Ready na lahat</option><option>May photos na, pero kailangan ng help sa pagsulat</option><option>Kailangan ko ng help sa lahat (layout + writing)</option></select>
     <label>Do you already have a domain or website?</label>
     <input id="dom" placeholder="Paste it here, or write 'none yet'">
+    <label>Domain name and hosting</label>
+    <select id="host"><option value="">Select</option><option>Meron na akong domain at hosting</option><option>Meron akong domain, wala pang hosting</option><option>Wala pa, kailangan ng help (isama sa package)</option></select>
   </div></div>
 
   <div class="panel" data-s="4"><div class="card">
@@ -130,10 +139,14 @@ pre{white-space:pre-wrap;word-break:break-word;background:rgba(0,0,0,.35);border
 <script>
 var I=function(d){return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>'};
 var SV=[["Website / Online Store",I('<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/>')],["Sales / Landing Page",I('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>')],["Digital Invitation",I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>')],["Custom App / Automation",I('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>')],["Link-in-Bio / Portfolio",I('<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>')],["Not sure yet",I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5"/>')]];
-var FT=["Online payments","Order / booking form","AI chatbot","Admin dashboard","Inventory tracking","Login / accounts","Messenger integration","Animations","Multi-language","Analytics"];
+var FT=["Contact form","Messenger / WhatsApp / Viber chat button","Booking system","Online payment (GCash, Maya, card)","Product catalog / online store","Blog","AI chatbot","Admin dashboard","Inventory tracking","Login / accounts","Animations","Multi-language","Analytics"];
 var svc="",feat={},s=1;
 var sg=document.getElementById("svc");
 SV.forEach(function(v){var d=document.createElement("div");d.className="opt";d.innerHTML=v[1]+v[0];d.onclick=function(){svc=v[0];[].forEach.call(sg.children,function(c){c.classList.remove("sel")});d.classList.add("sel")};sg.appendChild(d)});
+var S={gl:{},pg:{}};
+function mk(id,arr,key){var g=document.getElementById(id);arr.forEach(function(f){var d=document.createElement("div");d.className="opt";d.textContent=f;d.onclick=function(){S[key][f]=!S[key][f];d.classList.toggle("sel")};g.appendChild(d)})}
+mk("goals",["Online presence lang","Get inquiries / leads","Accept bookings / appointments","Sell online (with payment)","Iba pa"],"gl");
+mk("pgs",["Home","About","Services / Products","Gallery","Contact","FAQ","Blog"],"pg");
 var fg=document.getElementById("feat");
 FT.forEach(function(f){var d=document.createElement("div");d.className="opt";d.textContent=f;d.onclick=function(){feat[f]=!feat[f];d.classList.toggle("sel")};fg.appendChild(d)});
 function v(i){return document.getElementById(i).value.trim()}
@@ -144,8 +157,9 @@ document.getElementById("nx").textContent=n==4?"Generate my brief":"Continue";do
 function chk(){if(s==1&&(!v("name")||!v("contact")))return "Please add your name and how I can reach you.";
 if(s==2&&!svc)return "Please choose the service you need.";if(s==3&&v("inst").length<20)return "Please describe what you want in a bit more detail.";
 if(s==4&&(!v("when")||!v("bud")))return "Please select your timeline and budget.";return ""}
+function sel(o){return Object.keys(o).filter(function(k){return o[k]}).join(", ")||"—"}
 function brief(){var f=Object.keys(feat).filter(function(k){return feat[k]}).join(", ")||"—";
-return ["PROJECT BRIEF","Name: "+v("name"),"Brand: "+(v("brand")||"—"),"Contact: "+v("contact"),"About: "+(v("about")||"—"),"","Service: "+svc,"Goal: "+(v("goal")||"—"),"Audience: "+(v("aud")||"—"),"","Instructions: "+v("inst"),"Features: "+f,"Inspiration: "+(v("ref")||"—"),"Assets: "+(v("assets")||"—"),"Style: "+(v("style")||"—"),"Domain: "+(v("dom")||"—"),"","Deadline: "+v("when"),"Budget: "+v("bud"),"Notes: "+(v("more")||"—")].join("\n")}
+return ["PROJECT BRIEF","Name: "+v("name"),"Brand: "+(v("brand")||"—"),"Contact: "+v("contact"),"About: "+(v("about")||"—"),"Existing online presence: "+(v("online")||"—"),"","Service: "+svc,"Goal: "+sel(S.gl)+(v("goal")?" — "+v("goal"):""),"Audience: "+(v("aud")||"—"),"Pages: "+sel(S.pg),"","Instructions: "+v("inst"),"Features: "+f,"Inspiration: "+(v("ref")||"—"),"Assets: "+(v("assets")||"—"),"Style: "+(v("style")||"—"),"Logo & brand colors: "+(v("logo")||"—"),"Photos & text: "+(v("cont")||"—"),"Domain / website: "+(v("dom")||"—"),"Domain & hosting: "+(v("host")||"—"),"","Deadline: "+v("when"),"Budget: "+v("bud"),"Notes: "+(v("more")||"—")].join("\n")}
 document.getElementById("nx").onclick=function(){var e=chk();if(e){document.getElementById("err").textContent=e;return}
 if(s==4)document.getElementById("out").textContent=brief();show(s+1)};
 document.getElementById("bk").onclick=function(){show(s-1)};
@@ -162,12 +176,14 @@ if(!SUPABASE_URL||!SUPABASE_ANON_KEY){o.textContent="Online submit isn't connect
 b.disabled=true;b.textContent="Sending...";
 fetch(SUPABASE_URL+"/rest/v1/client_briefs",{method:"POST",headers:hd(),body:JSON.stringify({name:v("name"),brand:v("brand"),contact:v("contact"),service:svc,deadline:v("when"),budget:v("bud"),brief:document.getElementById("out").textContent})})
 .then(function(r){if(!r.ok)throw r.status;try{localStorage.removeItem("digitera_onboarding_draft")}catch(e){}show(6)}).catch(function(e){console.error("submit failed",e);b.disabled=false;b.textContent="Submit my project";o.textContent="Couldn't send (error "+(typeof e==="number"?e:"network")+"). Please use Copy brief + Messenger."})};
-var DK="digitera_onboarding_draft",IDS=["name","brand","contact","about","goal","aud","inst","ref","assets","style","dom","when","bud","more"];
-function saveDraft(){if(s>=6)return;try{var d={s:s,svc:svc,feat:feat};IDS.forEach(function(i){d[i]=document.getElementById(i).value});localStorage.setItem(DK,JSON.stringify(d))}catch(e){}}
+var DK="digitera_onboarding_draft",IDS=["name","brand","contact","about","goal","aud","inst","ref","assets","style","dom","when","bud","more","online","logo","cont","host"];
+function saveDraft(){if(s>=6)return;try{var d={s:s,svc:svc,feat:feat,gl:S.gl,pg:S.pg};IDS.forEach(function(i){d[i]=document.getElementById(i).value});localStorage.setItem(DK,JSON.stringify(d))}catch(e){}}
 function loadDraft(){try{var d=JSON.parse(localStorage.getItem(DK)||"null");if(!d)return;
 IDS.forEach(function(i){if(d[i]!=null)document.getElementById(i).value=d[i]});
 if(d.svc){svc=d.svc;SV.forEach(function(x,i){if(x[0]===d.svc)sg.children[i].classList.add("sel")})}
 if(d.feat){feat=d.feat;[].forEach.call(fg.children,function(c){if(feat[c.textContent])c.classList.add("sel")})}
+if(d.gl){S.gl=d.gl;[].forEach.call(document.getElementById("goals").children,function(c){if(S.gl[c.textContent])c.classList.add("sel")})}
+if(d.pg){S.pg=d.pg;[].forEach.call(document.getElementById("pgs").children,function(c){if(S.pg[c.textContent])c.classList.add("sel")})}
 if(d.s>1&&d.s<5)show(d.s)}catch(e){}}
 document.addEventListener("input",saveDraft);document.addEventListener("change",saveDraft);
 document.addEventListener("click",function(){setTimeout(saveDraft,0)});
