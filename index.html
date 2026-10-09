@@ -77,6 +77,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .sug{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
 .sug button{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font:inherit;font-size:12px;padding:6px 11px;cursor:pointer}
 .sug button:hover{background:rgba(255,255,255,.1)}
+.pm{display:block;text-align:center;font-size:12px;color:rgba(255,255,255,.6);padding:9px 12px;border-top:1px solid rgba(255,255,255,.12);transition:color .2s}.pm:hover{color:#fff}
 .cf{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,.12)}
 .cf input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px;font:inherit;font-size:14px;outline:none;min-width:0}
 .cf button{background:#fff;color:#000;border:0;padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
@@ -97,7 +98,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
       <a data-open="apps">APPS</a>
       <a data-open="engines">ENGINES</a>
       <a href="onboarding.html">START A PROJECT</a>
-      <a href="https://m.me/118441451362301" target="_blank" rel="noopener">MESSAGE</a>
+      <a href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">MESSAGE</a>
     </div>
     <button class="burger" data-open="menu" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
   </nav>
@@ -120,7 +121,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     <div class="row">
       <h1>I BUILD THE<br><span class="px">AUTOMATION</span> TO<br>GROW YOUR<br><span class="px">BUSINESS</span></h1>
       <div class="col">
-        <div class="btns"><button class="show ask" data-chat><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>ASK ME<span class="dot"></span></button><button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button></div>
+        <div class="btns"><button class="show ask" data-chat><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>ASK ME<span class="dot"></span></button><button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button><a class="show" href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3C7 3 3 6.6 3 11c0 2.4 1.2 4.5 3.1 6V21l3-1.7c.9.2 1.9.4 2.9.4 5 0 9-3.6 9-8S17 3 12 3z"/><path d="M7.5 13l3.5-4 2.5 2.5L17 9"/></svg>MESSAGE ME</a></div>
         <div class="chips"><div class="chip"><b>LIVE STORE</b></div><div class="chip"><b>APPS</b><i>x7</i></div><div class="chip"><b>AI-ASSISTED BUILDS</b></div></div>
       </div>
     </div>
@@ -139,7 +140,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     <a data-open="apps">APPS</a>
     <a data-open="engines">ENGINES</a>
     <a href="onboarding.html">START A PROJECT</a>
-    <a href="https://m.me/118441451362301" target="_blank" rel="noopener">MESSAGE</a>
+    <a href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">MESSAGE</a>
   </div>
 </div>
 
@@ -177,6 +178,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
   <div class="ch"><div><b>ASK LEVI</b><small>AI assistant &middot; answers on Levi's behalf</small></div><button class="xb" id="cx" aria-label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
   <div class="msgs" id="ms"></div>
   <div class="sug" id="sg"></div>
+  <a class="pm" href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">Prefer a private chat? Message Levi on Messenger &rarr;</a>
   <div class="cf"><input id="ci" placeholder="Ask me anything..." maxlength="300" autocomplete="off"><button id="cs">SEND</button></div>
 </div>
 
@@ -196,11 +198,11 @@ document.getElementById("v").addEventListener("error",function(){this.style.disp
 var CHAT_URL="https://bffsjsdarfvavhmbfzlh.supabase.co/functions/v1/clever-task",CHAT_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
 var chat=document.getElementById("chat"),ms=document.getElementById("ms"),ci=document.getElementById("ci"),sg=document.getElementById("sg"),hist=[],busy=false;
 function addM(t,c){var d=document.createElement("div");d.className="m "+c;d.textContent=t;ms.appendChild(d);ms.scrollTop=ms.scrollHeight;return d}
-function openChat(){closeAll();chat.classList.add("on");if(!ms.children.length){addM("Hi! I'm Levi's AI assistant. Ask me what Levi builds, see his live work, or how to start a project.","b");["What can you build for me?","Show me your work","How do I start?","Magkano ang website?"].forEach(function(q){var b=document.createElement("button");b.textContent=q;b.onclick=function(){send(q)};sg.appendChild(b)})}setTimeout(function(){ci.focus()},300)}
+function openChat(){closeAll();chat.classList.add("on");if(!ms.children.length){addM("Hi! I'm Levi's AI assistant. Ask me what Levi builds, see her live work, or how to start a project.","b");["What can you build for me?","Show me your work","How do I start?","Magkano ang website?"].forEach(function(q){var b=document.createElement("button");b.textContent=q;b.onclick=function(){send(q)};sg.appendChild(b)})}setTimeout(function(){ci.focus()},300)}
 function send(q){q=(q||ci.value).trim();if(!q||busy)return;ci.value="";sg.style.display="none";addM(q,"u");hist.push({role:"user",content:q});busy=true;var t=addM("Typing...","b t");
 fetch(CHAT_URL,{method:"POST",headers:{"Content-Type":"application/json",apikey:CHAT_KEY},body:JSON.stringify({messages:hist})})
 .then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){t.remove();var a=d.reply||"Sorry, please try again.";hist.push({role:"assistant",content:a});addM(a,"b")})
-.catch(function(){t.remove();addM("Sorry, I can't answer right now. Please message Levi on Messenger: m.me/118441451362301","b")}).then(function(){busy=false})}
+.catch(function(){t.remove();addM("Sorry, I can't answer right now. Please message Levi on Messenger: https://www.messenger.com/t/118441451362301/","b")}).then(function(){busy=false})}
 document.getElementById("cs").onclick=function(){send()};
 ci.addEventListener("keydown",function(e){if(e.key==="Enter")send()});
 document.getElementById("cx").onclick=function(){chat.classList.remove("on")};
