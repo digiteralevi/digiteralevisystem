@@ -3,159 +3,168 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Client Onboarding — Digitera Levi</title>
+<title>Digitera Levi - Web &amp; Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33" rel="stylesheet">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#0f0a1a;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);--ink:#f6f1ff;--mute:#b9aed0;--lilac:#a98af0;--gold:#e8c05a;--fld:rgba(255,255,255,.05)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#faf5ea;--card:rgba(255,255,255,.9);--line:#e2d6bd;--ink:#2a1f3d;--mute:#6b6080;--lilac:#7d56cf;--gold:#b8861b;--fld:#fff}}
-:root[data-theme="light"]{--bg:#faf5ea;--card:rgba(255,255,255,.9);--line:#e2d6bd;--ink:#2a1f3d;--mute:#6b6080;--lilac:#7d56cf;--gold:#b8861b;--fld:#fff}
-html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#000;--ink:#fff;--accent:#ef4444;--chip:#0b0b0b}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#000;--ink:#fff}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
-.orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.3;z-index:0;animation:fl 14s ease-in-out infinite}
-.o1{width:260px;height:260px;background:var(--lilac);top:-80px;right:-80px}.o2{width:240px;height:240px;background:var(--gold);bottom:-80px;left:-80px;animation-delay:-6s}
-@keyframes fl{50%{transform:translate(24px,30px) scale(1.12)}}
-.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:30px 18px 50px}
-.brand{text-align:center;color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-h1{text-align:center;font-size:27px;line-height:1.15;margin:10px 0 8px}
-.lead{text-align:center;color:var(--mute);font-size:14.5px;margin:0 0 22px}
-.bar{height:4px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:6px}
-.bar i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--lilac),var(--gold));transition:width .5s}
-.stp{font-size:12px;color:var(--mute);text-align:right;margin-bottom:14px}
-.panel{display:none;animation:in .5s}.panel.on{display:block}
-@keyframes in{from{opacity:0;transform:translateY(14px)}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;backdrop-filter:blur(10px)}
-h2{margin:0 0 4px;font-size:19px}.sh{color:var(--mute);font-size:13.5px;margin:0 0 16px}
-label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
-label small{font-weight:400;color:var(--mute)}
-input,textarea,select{width:100%;background:var(--fld);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:13px;font:inherit;font-size:15px;outline:none;transition:border .2s,box-shadow .2s}
-input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,192,90,.2)}
-textarea{min-height:130px;resize:vertical}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{cursor:pointer;border:1px solid var(--line);background:var(--fld);border-radius:14px;padding:13px 10px;text-align:center;font-size:13px;transition:.2s;user-select:none}
-.opt svg{display:block;margin:0 auto 6px;color:var(--lilac)}
-.opt.sel{border-color:var(--gold);background:rgba(232,192,90,.12);transform:translateY(-2px)}
-.opt.sel svg{color:var(--gold)}
-.chk{display:flex;flex-wrap:wrap;gap:8px}
-.chk .opt{padding:8px 13px;border-radius:99px}
-.nav{display:flex;gap:10px;margin-top:18px}
-.b{flex:1;border:0;border-radius:14px;padding:15px;font:inherit;font-weight:700;cursor:pointer;color:var(--ink);background:var(--card);border:1px solid var(--line)}
-.b.go{background:linear-gradient(135deg,var(--lilac),var(--gold));color:#1a1030;border:0}
-.err{color:#ff7a8a;font-size:13px;margin-top:10px;min-height:18px}
-pre{white-space:pre-wrap;word-break:break-word;background:var(--fld);border:1px solid var(--line);border-radius:12px;padding:14px;font:13px/1.55 ui-monospace,Menlo,monospace;max-height:340px;overflow:auto;margin:0 0 6px}
-.ok{text-align:center;color:var(--gold);font-size:13px;min-height:18px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.px{font-family:'basis33','Courier New',monospace}
+a{color:inherit;text-decoration:none}
+.bg{position:fixed;inset:0;background:radial-gradient(60% 50% at 20% 30%,#4b2fa0 0,transparent 70%),radial-gradient(50% 50% at 85% 75%,#b8861b 0,transparent 70%),#07040f;animation:dr 12s ease-in-out infinite alternate}
+@keyframes dr{to{filter:hue-rotate(40deg) brightness(1.2)}}
+video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover}
+@media(min-width:1024px){video{transform:scale(1.2)}}
+.hi{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 20%;display:none}.fade{position:fixed;inset:0;display:none;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.2) 60%,transparent)}
+.page{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;padding:0 20px}
+@media(min-width:768px){.page{padding:0 40px}}@media(min-width:1024px){.page{padding:0 56px}}
+.lg{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block}
+nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+.links{display:none;gap:32px;font-size:14px;letter-spacing:.05em}
+@media(min-width:768px){.links{display:flex}.burger{display:none}}
+.links a,.burger,.xb{transition:opacity .2s;cursor:pointer}.links a:hover,.burger:hover,.xb:hover{opacity:.7}
+.burger,.xb{background:none;border:0;color:#fff;padding:8px}
+.meta{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(min-width:1024px){.meta{grid-template-columns:repeat(4,1fr);gap:32px}}
+.meta h2{margin:0;font-weight:400;font-size:18px;letter-spacing:.05em;line-height:1.2}
+.meta h2 .px{font-size:24px}@media(min-width:768px){.meta h2{font-size:20px}.meta h2 .px{font-size:30px}}
+.r{text-align:right}@media(min-width:1024px){.r{text-align:left}}
+.ast{font-size:10px;color:rgba(255,255,255,.5);margin-top:12px}
+.blurb{margin-top:4px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.6}
+.lab{font-size:16px;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:12px}
+.body{font-size:14px;color:rgba(255,255,255,.9);line-height:1.6;max-width:220px}
+.meta ul{list-style:none;margin:0;padding:0;font-size:14px;color:rgba(255,255,255,.9);line-height:1.6}
+.sp{flex:1}
+.bot{padding-bottom:16px}
+.row{display:grid;grid-template-columns:1fr;gap:16px;align-items:end}
+@media(min-width:1024px){.row{grid-template-columns:1fr 1fr;gap:24px}}
+h1{margin:0;font-weight:400;text-transform:uppercase;letter-spacing:.05em;line-height:.72;font-size:clamp(30px,8vw,68px)}
+h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseline}
+.col{display:flex;flex-direction:column;gap:16px;justify-content:flex-end}
+.show{align-self:flex-start;display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.3);padding:12px 24px;background:rgba(255,255,255,.05);backdrop-filter:blur(4px);color:#fff;font:inherit;font-size:14px;letter-spacing:.08em;cursor:pointer;transition:background .2s}
+.show:hover{background:rgba(255,255,255,.1)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:rgba(255,255,255,.8);align-self:flex-start}
+@media(min-width:1024px){.chips{align-self:flex-end}}
+.chip{background:var(--chip);padding:8px 14px;display:flex;align-items:center;gap:8px}
+.chip b{font-size:13px;letter-spacing:-.01em}.chip i{font-style:normal;color:rgba(255,255,255,.5);font-size:12px}
+.foot{margin-top:16px;display:grid;grid-template-columns:1fr;gap:8px;padding-top:16px;font-size:12px;color:rgba(255,255,255,.6)}
+@media(min-width:640px){.foot{grid-template-columns:1fr 1fr;gap:16px}.foot div:last-child{text-align:right}}
+.foot a{color:var(--accent);transition:color .2s}.foot a:hover{color:#f87171}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.95);backdrop-filter:blur(12px);display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:all .5s cubic-bezier(.16,1,.3,1);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.ov.on{opacity:1;pointer-events:auto}
+.ovh{display:flex;align-items:center;justify-content:space-between;padding:24px}
+.ovn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;overflow:auto;padding:0 20px}
+.ovn a{font-size:24px;letter-spacing:.12em;opacity:0;transform:translateY(16px);transition:all .5s cubic-bezier(.16,1,.3,1);transition-delay:0ms;text-align:center}
+.ovn a small{display:block;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.55);margin-top:4px}
+.ovn.long{justify-content:flex-start;gap:20px;padding-bottom:40px}.ovn.long a{font-size:17px;max-width:420px}
+.ov.on .ovn a{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="orb o1"></div><div class="orb o2"></div>
-<div class="wrap">
-  <div class="brand">Digitera Levi · Client Onboarding</div>
-  <h1>Let's build something <span style="color:var(--gold)">exceptional.</span></h1>
-  <p class="lead">Takes about 5 minutes. The clearer your answers, the faster and better I can deliver.</p>
-  <div class="bar"><i id="pb"></i></div><div class="stp" id="st">Step 1 of 4</div>
-  <div style="font-size:12px;color:var(--mute);margin:-8px 0 12px">Your progress is saved on this device automatically.</div>
+<div class="bg"></div>
+<video id="v" autoplay muted loop playsinline src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4"></video>
 
-  <div class="panel on" data-s="1"><div class="card">
-    <h2>About you</h2><p class="sh">So I know who I'm building for.</p>
-    <label>Full name</label><input id="name" autocomplete="name" placeholder="Your name">
-    <label>Business / brand name <small>(or "personal")</small></label><input id="brand" placeholder="e.g. Maria's Bakeshop">
-    <label>Best way to reach you</label><input id="contact" placeholder="Messenger link, phone or email">
-    <label>What does your business do?</label><textarea id="about" style="min-height:90px" placeholder="Short description of what you sell or offer"></textarea>
-  </div></div>
+<img class="hi" id="hi" alt="Levi"><div class="fade" id="fd"></div>
+<div class="page">
+  <nav>
+    <a href="#" aria-label="Digitera Levi"><img class="lg" src="https://res.cloudinary.com/dqo0bc4u/image/upload/v1784271943/Digitera_profile_gif_logo_jd7njm.gif" alt="Digitera Levi"></a>
+    <div class="links">
+      <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">STORE</a>
+      <a data-open="apps">APPS</a>
+      <a data-open="engines">ENGINES</a>
+      <a href="onboarding.html">START A PROJECT</a>
+      <a href="https://m.me/118441451362301" target="_blank" rel="noopener">MESSAGE</a>
+    </div>
+    <button class="burger" data-open="menu" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </nav>
 
-  <div class="panel" data-s="2"><div class="card">
-    <h2>What do you need?</h2><p class="sh">Pick the main service you want.</p>
-    <div class="opts" id="svc"></div>
-    <label>Main goal <small>(what should this project achieve?)</small></label>
-    <input id="goal" placeholder="e.g. Get more orders, look more professional, automate replies">
-    <label>Who is your ideal customer?</label>
-    <input id="aud" placeholder="Age, location, what they struggle with">
-  </div></div>
+  <div class="meta">
+    <div>
+      <h2>DIGITERA<br><span class="px">LEVI</span></h2>
+      <div class="ast">*</div>
+      <div class="blurb px">Digitera Levi is my<br>personal brand.<br>Build. Share. Earn.</div>
+    </div>
+    <div class="r"><h2>WEB &amp;<br><span class="px">AUTOMATION</span></h2></div>
+    <div><div class="lab px">What I Do</div><div class="body">I build websites, sales systems and AI tools that help Filipino sellers look premium and close faster.</div></div>
+    <div class="r"><div class="lab px">Services</div>
+      <ul><li>Websites &amp; Online Stores</li><li>Sales &amp; Landing Pages</li><li>Digital Invitations</li><li>Custom Apps &amp; Automation</li><li>AI Chatbots</li><li>Link-in-Bio &amp; Portfolio</li></ul></div>
+  </div>
 
-  <div class="panel" data-s="3"><div class="card">
-    <h2>Your instructions</h2><p class="sh">This is the most important part. Tell me everything. No detail is too small.</p>
-    <label>Describe exactly what you want me to build</label>
-    <textarea id="inst" placeholder="Pages/sections you want, how it should work, what customers should be able to do, tone of voice..."></textarea>
-    <label>Features you want</label>
-    <div class="chk" id="feat"></div>
-    <label>Websites or apps you like <small>(inspiration links)</small></label>
-    <input id="ref" placeholder="Paste links, separated by commas">
-    <label>Logo, photos &amp; content <small>(Google Drive / Canva / Cloudinary link)</small></label>
-    <input id="assets" placeholder="Paste a shareable link to your files">
-    <label>Brand colors &amp; style</label>
-    <input id="style" placeholder="e.g. Elegant gold &amp; cream, modern, playful">
-    <label>Do you already have a domain or website?</label>
-    <input id="dom" placeholder="Paste it here, or write 'none yet'">
-  </div></div>
+  <div class="sp"></div>
 
-  <div class="panel" data-s="4"><div class="card">
-    <h2>Timeline &amp; budget</h2><p class="sh">So I can plan properly and propose the right package.</p>
-    <label>When do you need it?</label>
-    <select id="when"><option value="">Select</option><option>ASAP (within 3 days)</option><option>Within 1 week</option><option>Within 2 weeks</option><option>Within 1 month</option><option>Flexible</option></select>
-    <label>Budget range</label>
-    <select id="bud"><option value="">Select</option><option>Under ₱2,000</option><option>₱2,000 – ₱5,000</option><option>₱5,000 – ₱10,000</option><option>₱10,000 – ₱25,000</option><option>₱25,000+</option><option>Not sure yet. Recommend something</option></select>
-    <label>Anything else I should know? <small>(optional)</small></label>
-    <textarea id="more" style="min-height:90px"></textarea>
-  </div></div>
-
-  <div class="panel" data-s="5"><div class="card">
-    <h2>Your project brief</h2><p class="sh">Review it, then submit. I'll reply with the next steps.</p>
-    <pre id="out"></pre><div class="ok" id="ok"></div>
-    <button class="b go" id="sub" style="width:100%;margin-bottom:10px">Submit my project</button>
-    <div class="nav" style="margin-top:0"><button class="b" id="cp">Copy brief</button><button class="b" id="ms">Send on Messenger</button></div>
-  </div></div>
-
-  <div class="panel" data-s="6"><div class="card" style="text-align:center"><h2>Thank you. Your brief is in.</h2><p class="sh" style="margin:8px 0 0">I received your project details and will message you with the next steps very soon.</p></div></div>
-
-  <div class="err" id="err"></div>
-  <div class="nav" id="nv"><button class="b" id="bk" style="display:none">Back</button><button class="b go" id="nx">Continue</button></div>
+  <div class="bot">
+    <div class="row">
+      <h1>I BUILD THE<br><span class="px">AUTOMATION</span> TO<br>GROW YOUR<br><span class="px">BUSINESS</span></h1>
+      <div class="col">
+        <button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button>
+        <div class="chips"><div class="chip"><b>LIVE STORE</b></div><div class="chip"><b>APPS</b><i>x6</i></div><div class="chip"><b>AI-ASSISTED BUILDS</b></div></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>Open to client projects. <a href="onboarding.html">Start your project</a></div>
+      <div>Online store &bull; 6 live apps &bull; Custom builds</div>
+    </div>
+  </div>
 </div>
+
+<div class="ov" id="menu">
+  <div class="ovh"><img class="lg" src="https://res.cloudinary.com/dqo0bc4u/image/upload/v1784271943/Digitera_profile_gif_logo_jd7njm.gif" alt="Digitera Levi"><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="ovn">
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">STORE</a>
+    <a data-open="apps">APPS</a>
+    <a data-open="engines">ENGINES</a>
+    <a href="onboarding.html">START A PROJECT</a>
+    <a href="https://m.me/118441451362301" target="_blank" rel="noopener">MESSAGE</a>
+  </div>
+</div>
+
+<div class="ov" id="apps">
+  <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">LIVE APPS</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="ovn">
+    <a href="https://karate-way-of-honor.vercel.app/" target="_blank" rel="noopener">KARATE-DO<small>Interactive game</small></a>
+    <a href="https://caldefcalculator.netlify.app/" target="_blank" rel="noopener">CALDEF CALCULATOR<small>Mini app</small></a>
+    <a href="https://faithwheel.netlify.app/" target="_blank" rel="noopener">FAITH STEERING WHEEL<small>Mini app</small></a>
+    <a href="https://thechosenfanchallenge.netlify.app/" target="_blank" rel="noopener">THE CHOSEN FAN CHALLENGE<small>Quiz game</small></a>
+    <a href="https://jcorganicbarleyjuice.vercel.app/" target="_blank" rel="noopener">JC ORGANIC BARLEY<small>Sales page</small></a>
+    <a href="https://viproiframeworkpage.vercel.app/" target="_blank" rel="noopener">VIP ROI FRAMEWORK<small>Sales page</small></a>
+  </div>
+</div>
+
+<div class="ov" id="engines">
+  <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">10 ENGINES &middot; VIP ROI SUITE</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="ovn long">
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">01 &middot; SALES PAGE ENGINE<small>Generates a long-form sales page from your offer details.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">02 &middot; AD-READY AUDITOR<small>Checks your funnel, checkout and Meta Pixel setup before you spend on ads.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">03 &middot; DIGITERA ROI VAULT V3<small>Projects your gross output and profit roadmap for your niche.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">04 &middot; 5:2:2 CREATIVE ENGINE<small>Video blueprints and ad copy prompts, ready to execute.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">05 &middot; PSYCHOLOGICAL STORY-SELLING MATRIX V5<small>A story-selling framework built on sales psychology.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">06 &middot; FUNNEL SPEED OPTIMIZATION ANALYZER<small>Estimates page-load risk before it hurts conversions.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">07 &middot; 15-COLOR CUSTOM FUNNEL CONFIGURATOR<small>Switch your funnel's brand theme with 15 colors and live preview.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">08 &middot; 48-HOUR AD PROFIT-PROTECTOR V2<small>A metrics audit that signals when to scale and when to stop an ad.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">09 &middot; 30-DAY ALGORITHM INCONSISTENCY TRACKER<small>Tracks your daily posting momentum.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">10 &middot; SCALE-UP PLAYBOOK ENGINE<small>Generates budget increments based on your actual performance.</small></a>
+    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener" style="color:#ef4444">BROWSE THE STORE &rarr;</a>
+  </div>
+</div>
+
 <script>
-var I=function(d){return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>'};
-var SV=[["Website / Online Store",I('<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/>')],["Sales / Landing Page",I('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>')],["Digital Invitation",I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>')],["Custom App / Automation",I('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>')],["Link-in-Bio / Portfolio",I('<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>')],["Not sure yet",I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5"/>')]];
-var FT=["Online payments","Order / booking form","AI chatbot","Admin dashboard","Inventory tracking","Login / accounts","Messenger integration","Animations","Multi-language","Analytics"];
-var svc="",feat={},s=1;
-var sg=document.getElementById("svc");
-SV.forEach(function(v){var d=document.createElement("div");d.className="opt";d.innerHTML=v[1]+v[0];d.onclick=function(){svc=v[0];[].forEach.call(sg.children,function(c){c.classList.remove("sel")});d.classList.add("sel")};sg.appendChild(d)});
-var fg=document.getElementById("feat");
-FT.forEach(function(f){var d=document.createElement("div");d.className="opt";d.textContent=f;d.onclick=function(){feat[f]=!feat[f];d.classList.toggle("sel")};fg.appendChild(d)});
-function v(i){return document.getElementById(i).value.trim()}
-function show(n){s=n;[].forEach.call(document.querySelectorAll(".panel"),function(p){p.classList.toggle("on",+p.dataset.s===n)});
-document.getElementById("pb").style.width=(n>=5?100:n*25)+"%";document.getElementById("st").textContent=n<5?"Step "+n+" of 4":(n==5?"Ready to send":"Sent");
-document.getElementById("bk").style.display=n>1?"block":"none";document.getElementById("nv").style.display=n>=5?"none":"flex";
-document.getElementById("nx").textContent=n==4?"Generate my brief":"Continue";document.getElementById("err").textContent="";window.scrollTo({top:0,behavior:"smooth"})}
-function chk(){if(s==1&&(!v("name")||!v("contact")))return "Please add your name and how I can reach you.";
-if(s==2&&!svc)return "Please choose the service you need.";if(s==3&&v("inst").length<20)return "Please describe what you want in a bit more detail.";
-if(s==4&&(!v("when")||!v("bud")))return "Please select your timeline and budget.";return ""}
-function brief(){var f=Object.keys(feat).filter(function(k){return feat[k]}).join(", ")||"—";
-return ["PROJECT BRIEF","Name: "+v("name"),"Brand: "+(v("brand")||"—"),"Contact: "+v("contact"),"About: "+(v("about")||"—"),"","Service: "+svc,"Goal: "+(v("goal")||"—"),"Audience: "+(v("aud")||"—"),"","Instructions: "+v("inst"),"Features: "+f,"Inspiration: "+(v("ref")||"—"),"Assets: "+(v("assets")||"—"),"Style: "+(v("style")||"—"),"Domain: "+(v("dom")||"—"),"","Deadline: "+v("when"),"Budget: "+v("bud"),"Notes: "+(v("more")||"—")].join("\n")}
-document.getElementById("nx").onclick=function(){var e=chk();if(e){document.getElementById("err").textContent=e;return}
-if(s==4)document.getElementById("out").textContent=brief();show(s+1)};
-document.getElementById("bk").onclick=function(){show(s-1)};
-function cp(){var t=document.getElementById("out").textContent,o=document.getElementById("ok");
-try{navigator.clipboard.writeText(t).then(function(){o.textContent="Copied. Paste it in Messenger."},fb)}catch(x){fb()}
-function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");o.textContent="Copied. Paste it in Messenger."}catch(x){o.textContent="Select the text above and copy it manually."}a.remove()}}
-document.getElementById("cp").onclick=cp;
-document.getElementById("ms").onclick=function(){cp();window.open("https://m.me/118441451362301","_blank")};
-var SUPABASE_URL="https://bffsjsdarfvavhmbfzlh.supabase.co";
-var SUPABASE_ANON_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
-function hd(){var h={"Content-Type":"application/json",apikey:SUPABASE_ANON_KEY,Prefer:"return=minimal"};if(SUPABASE_ANON_KEY.indexOf("eyJ")===0)h.Authorization="Bearer "+SUPABASE_ANON_KEY;return h}
-document.getElementById("sub").onclick=function(){var o=document.getElementById("ok"),b=this;
-if(!SUPABASE_URL||!SUPABASE_ANON_KEY){o.textContent="Online submit isn't connected yet. Please use Copy brief + Messenger.";return}
-b.disabled=true;b.textContent="Sending...";
-fetch(SUPABASE_URL+"/rest/v1/client_briefs",{method:"POST",headers:hd(),body:JSON.stringify({name:v("name"),brand:v("brand"),contact:v("contact"),service:svc,deadline:v("when"),budget:v("bud"),brief:document.getElementById("out").textContent})})
-.then(function(r){if(!r.ok)throw 0;try{localStorage.removeItem("digitera_onboarding_draft")}catch(e){}show(6)}).catch(function(){b.disabled=false;b.textContent="Submit my project";o.textContent="Couldn't send. Please use Copy brief + Messenger."})};
-var DK="digitera_onboarding_draft",IDS=["name","brand","contact","about","goal","aud","inst","ref","assets","style","dom","when","bud","more"];
-function saveDraft(){if(s>=6)return;try{var d={s:s,svc:svc,feat:feat};IDS.forEach(function(i){d[i]=document.getElementById(i).value});localStorage.setItem(DK,JSON.stringify(d))}catch(e){}}
-function loadDraft(){try{var d=JSON.parse(localStorage.getItem(DK)||"null");if(!d)return;
-IDS.forEach(function(i){if(d[i]!=null)document.getElementById(i).value=d[i]});
-if(d.svc){svc=d.svc;SV.forEach(function(x,i){if(x[0]===d.svc)sg.children[i].classList.add("sel")})}
-if(d.feat){feat=d.feat;[].forEach.call(fg.children,function(c){if(feat[c.textContent])c.classList.add("sel")})}
-if(d.s>1&&d.s<5)show(d.s)}catch(e){}}
-document.addEventListener("input",saveDraft);document.addEventListener("change",saveDraft);
-document.addEventListener("click",function(){setTimeout(saveDraft,0)});
-loadDraft();
+var ovs=document.querySelectorAll(".ov");
+function closeAll(){[].forEach.call(ovs,function(o){o.classList.remove("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a){a.style.transitionDelay="0ms"})})}
+function openOv(id){closeAll();var o=document.getElementById(id);o.classList.add("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a,i){a.style.transitionDelay=(100+i*60)+"ms"})}
+[].forEach.call(document.querySelectorAll("[data-open]"),function(b){b.addEventListener("click",function(){openOv(b.getAttribute("data-open"))})});
+[].forEach.call(document.querySelectorAll("[data-close]"),function(b){b.addEventListener("click",closeAll)});
+[].forEach.call(document.querySelectorAll(".ovn a[href]"),function(a){a.addEventListener("click",closeAll)});
+var HERO_IMAGE="";  // paste YOUR photo URL (Cloudinary) here
+var HERO_VIDEO="https://res.cloudinary.com/dqo0bc4u/video/upload/v1791505824/Person_opening_eyes_video_portrait_20261009081238_qn4dk1.mp4";
+var vd=document.getElementById("v");
+if(HERO_VIDEO){vd.src=HERO_VIDEO;document.getElementById("fd").style.display="block"}
+if(HERO_IMAGE){vd.style.display="none";var im=document.getElementById("hi");im.src=HERO_IMAGE;im.style.display="block";document.getElementById("fd").style.display="block"}
+document.getElementById("v").addEventListener("error",function(){this.style.display="none"});
 </script>
 </body>
 </html>
