@@ -193,7 +193,7 @@ var vd=document.getElementById("v");
 if(HERO_VIDEO){vd.src=HERO_VIDEO;document.getElementById("fd").style.display="block"}
 if(HERO_IMAGE){vd.style.display="none";var im=document.getElementById("hi");im.src=HERO_IMAGE;im.style.display="block";document.getElementById("fd").style.display="block"}
 document.getElementById("v").addEventListener("error",function(){this.style.display="none"});
-var CHAT_URL="https://bffsjsdarfvavhmbfzlh.supabase.co/functions/v1/ask-levi",CHAT_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
+var CHAT_URL="https://bffsjsdarfvavhmbfzlh.supabase.co/functions/v1/clever-task",CHAT_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
 var chat=document.getElementById("chat"),ms=document.getElementById("ms"),ci=document.getElementById("ci"),sg=document.getElementById("sg"),hist=[],busy=false;
 function addM(t,c){var d=document.createElement("div");d.className="m "+c;d.textContent=t;ms.appendChild(d);ms.scrollTop=ms.scrollHeight;return d}
 function openChat(){closeAll();chat.classList.add("on");if(!ms.children.length){addM("Hi! I'm Levi's AI assistant. Ask me what Levi builds, see his live work, or how to start a project.","b");["What can you build for me?","Show me your work","How do I start?","Magkano ang website?"].forEach(function(q){var b=document.createElement("button");b.textContent=q;b.onclick=function(){send(q)};sg.appendChild(b)})}setTimeout(function(){ci.focus()},300)}
