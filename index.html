@@ -62,14 +62,16 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .ovn a small{display:block;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.55);margin-top:4px}
 .ovn.long{justify-content:flex-start;gap:20px;padding-bottom:40px}.ovn.long a{font-size:17px;max-width:420px}
 .ov.on .ovn a{opacity:1;transform:none}
-.cta{position:relative;overflow:hidden;align-self:flex-start;display:inline-flex;align-items:center;gap:12px;padding:18px 30px;font-weight:700;font-size:15px;letter-spacing:.1em;color:#1a1030;background:linear-gradient(135deg,#a98af0,#e8c05a);animation:ctapl 2.4s ease-in-out infinite;transition:transform .2s}
+.cta{position:relative;overflow:hidden;align-self:flex-start;display:inline-flex;align-items:center;gap:12px;padding:18px 30px;font-weight:700;font-size:15px;letter-spacing:.1em;color:#fff;background:rgba(255,255,255,.07);backdrop-filter:blur(8px);animation:ctapl 2.4s ease-in-out infinite;transition:transform .2s}
 .cta:hover{transform:translateY(-2px)}
-.cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:ctasw 3s infinite}
-.cta svg{transition:transform .2s}.cta:hover svg{transform:translateX(4px)}
+.cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,236,170,.28),transparent);transform:skewX(-20deg);animation:ctasw 3s infinite}
+.cta svg{transition:transform .2s;stroke:#fff}.cta:hover svg{transform:translateX(4px)}
 .ctan{font-size:12px;color:rgba(255,255,255,.6);margin:-8px 0 0}
 @keyframes ctasw{to{left:130%}}
-@keyframes ctapl{50%{box-shadow:0 0 30px rgba(232,192,90,.5)}}
-.links a.navcta{background:linear-gradient(135deg,#a98af0,#e8c05a);color:#1a1030;padding:9px 18px;font-weight:700}
+@keyframes ctapl{50%{box-shadow:0 0 24px rgba(232,192,90,.28)}}
+.links a.navcta{position:relative;background:rgba(255,255,255,.07);backdrop-filter:blur(8px);color:#fff;padding:9px 18px;font-weight:600}
+.cta::before,.navcta::before{content:"";position:absolute;inset:0;padding:1.5px;background:linear-gradient(110deg,#8a6a1e,#f6e27a,#c99a2e,#fff3b0,#8a6a1e);background-size:300% 100%;animation:gold 4s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+@keyframes gold{to{background-position:300% 0}}
 .ovn a.hl{color:#e8c05a}
 .btns{display:flex;flex-wrap:wrap;gap:10px;align-self:flex-start}.btns .show{align-self:auto}
 .show.ask .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pl 1.8s infinite}
