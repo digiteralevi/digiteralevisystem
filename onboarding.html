@@ -137,7 +137,7 @@ function cp(){var t=document.getElementById("out").textContent,o=document.getEle
 try{navigator.clipboard.writeText(t).then(function(){o.textContent="Copied. Paste it in Messenger."},fb)}catch(x){fb()}
 function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");o.textContent="Copied. Paste it in Messenger."}catch(x){o.textContent="Select the text above and copy it manually."}a.remove()}}
 document.getElementById("cp").onclick=cp;
-document.getElementById("ms").onclick=function(){cp();window.open("https://m.me/118441451362301","_blank")};
+document.getElementById("ms").onclick=function(){cp();window.open("https://www.messenger.com/t/118441451362301/","_blank")};
 var SUPABASE_URL="https://bffsjsdarfvavhmbfzlh.supabase.co";
 var SUPABASE_ANON_KEY="sb_publishable_Hy41GSjfke1sdbEAaYUphg_EeqQvAj9";
 function hd(){var h={"Content-Type":"application/json",apikey:SUPABASE_ANON_KEY,Prefer:"return=minimal"};if(SUPABASE_ANON_KEY.indexOf("eyJ")===0)h.Authorization="Bearer "+SUPABASE_ANON_KEY;return h}
