@@ -61,6 +61,15 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .ovn a{font-size:24px;letter-spacing:.12em;opacity:0;transform:translateY(16px);transition:all .5s cubic-bezier(.16,1,.3,1);transition-delay:0ms;text-align:center}
 .ovn a small{display:block;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.55);margin-top:4px}
 .ovn.long{justify-content:flex-start;gap:20px;padding-bottom:40px}.ovn.long a{font-size:17px;max-width:420px}
+.ovn.glist{align-items:center;justify-content:flex-start;padding:6px 20px 40px}
+.gw{width:100%;max-width:560px;display:flex;flex-direction:column;gap:10px}
+.gh{margin:16px 0 2px;font-size:13px;letter-spacing:.16em;color:#e8c05a}.gh:first-child{margin-top:4px}
+.ovn .gc{display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;font-size:15px;letter-spacing:.05em;padding:16px 18px;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14)}
+.ovn .gc b{font-weight:600}
+.ovn .gc small{margin-top:3px;letter-spacing:.02em}
+.ovn .gc:hover{border-color:#e8c05a;background:rgba(232,192,90,.08)}
+.ovn .gc svg{flex:none}
+.ovn .gc.cta2{border-color:rgba(232,192,90,.7);color:#e8c05a}
 .ov.on .ovn a{opacity:1;transform:none}
 .cta{position:relative;overflow:hidden;align-self:flex-start;display:inline-flex;align-items:center;gap:12px;padding:18px 30px;font-weight:700;font-size:15px;letter-spacing:.1em;color:#fff;background:rgba(255,255,255,.07);backdrop-filter:blur(8px);animation:ctapl 2.4s ease-in-out infinite;transition:transform .2s}
 .cta:hover{transform:translateY(-2px)}
@@ -159,48 +168,43 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 
 <div class="ov" id="apps">
   <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">LIVE APPS</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-  <div class="ovn">
-    <a href="https://karate-way-of-honor.vercel.app/" target="_blank" rel="noopener">KARATE-DO<small>Interactive game</small></a>
-    <a href="https://caldefcalculator.netlify.app/" target="_blank" rel="noopener">CALDEF CALCULATOR<small>Mini app</small></a>
-    <a href="https://faithwheel.netlify.app/" target="_blank" rel="noopener">FAITH STEERING WHEEL<small>Mini app</small></a>
-    <a href="https://thechosenfanchallenge.netlify.app/" target="_blank" rel="noopener">THE CHOSEN FAN CHALLENGE<small>Quiz game</small></a>
-    <a href="https://jcorganicbarleyjuice.vercel.app/" target="_blank" rel="noopener">JC ORGANIC BARLEY<small>Sales page</small></a>
-    <a href="https://viproiframeworkpage.vercel.app/" target="_blank" rel="noopener">VIP ROI FRAMEWORK<small>Sales page</small></a>
-    <a href="https://e-invitation-psi.vercel.app/" target="_blank" rel="noopener">DIGITAL INVITATION<small>Website invitation (debut sample)</small></a>
-    <a href="https://maison-aurea-tau.vercel.app/" target="_blank" rel="noopener">MAISON AUREA<small>Booking tool (salon sample)</small></a>
-    <a href="https://tasaco.vercel.app/" target="_blank" rel="noopener">TASA &amp; CO.<small>Website (cafe sample)</small></a>
-  </div>
+  <div class="ovn glist"><div class="gw">
+      <div class="gh px">WEBSITES &amp; SALES PAGES</div>
+      <a class="gc" href="https://tasaco.vercel.app/" target="_blank" rel="noopener"><span><b>TASA &amp; CO.</b><small>Cafe website with menu, bundle discount and Messenger ordering</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://jcorganicbarleyjuice.vercel.app/" target="_blank" rel="noopener"><span><b>JC ORGANIC BARLEY</b><small>Direct-response sales page</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://viproiframeworkpage.vercel.app/" target="_blank" rel="noopener"><span><b>VIP ROI FRAMEWORK</b><small>Long-form sales page for a 10-engine suite</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <div class="gh px">BOOKING &amp; INVITATIONS</div>
+      <a class="gc" href="https://maison-aurea-tau.vercel.app/" target="_blank" rel="noopener"><span><b>MAISON AUREA</b><small>Salon booking tool: pick services, date and time</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://e-invitation-psi.vercel.app/" target="_blank" rel="noopener"><span><b>DIGITAL INVITATION</b><small>Debut invitation website with RSVP and gallery</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <div class="gh px">MINI APPS &amp; GAMES</div>
+      <a class="gc" href="https://karate-way-of-honor.vercel.app/" target="_blank" rel="noopener"><span><b>KARATE-DO: WAY OF HONOR</b><small>Interactive learning game</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://thechosenfanchallenge.netlify.app/" target="_blank" rel="noopener"><span><b>THE CHOSEN FAN CHALLENGE</b><small>Quiz game with 5 levels</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://caldefcalculator.netlify.app/" target="_blank" rel="noopener"><span><b>CALDEF CALCULATOR</b><small>Spin-the-wheel diet and fitness app</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://faithwheel.netlify.app/" target="_blank" rel="noopener"><span><b>FAITH STEERING WHEEL</b><small>Feeling-based reflection and prayer app</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div></div>
 </div>
 
 <div class="ov" id="engines">
   <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">10 ENGINES &middot; VIP ROI SUITE</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-  <div class="ovn long">
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">01 &middot; SALES PAGE ENGINE<small>Generates a long-form sales page from your offer details.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">02 &middot; AD-READY AUDITOR<small>Checks your funnel, checkout and Meta Pixel setup before you spend on ads.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">03 &middot; DIGITERA ROI VAULT V3<small>Projects your gross output and profit roadmap for your niche.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">04 &middot; 5:2:2 CREATIVE ENGINE<small>Video blueprints and ad copy prompts, ready to execute.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">05 &middot; PSYCHOLOGICAL STORY-SELLING MATRIX V5<small>A story-selling framework built on sales psychology.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">06 &middot; FUNNEL SPEED OPTIMIZATION ANALYZER<small>Estimates page-load risk before it hurts conversions.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">07 &middot; 15-COLOR CUSTOM FUNNEL CONFIGURATOR<small>Switch your funnel's brand theme with 15 colors and live preview.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">08 &middot; 48-HOUR AD PROFIT-PROTECTOR V2<small>A metrics audit that signals when to scale and when to stop an ad.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">09 &middot; 30-DAY ALGORITHM INCONSISTENCY TRACKER<small>Tracks your daily posting momentum.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">10 &middot; SCALE-UP PLAYBOOK ENGINE<small>Generates budget increments based on your actual performance.</small></a>
-    <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener" style="color:#ef4444">BROWSE THE STORE &rarr;</a>
-  </div>
-</div>
-
-<div class="chat" id="chat" role="dialog" aria-label="Ask Levi">
-  <div class="ch"><div><b>ASK LEVI</b><small>AI assistant &middot; answers on Levi's behalf</small></div><button class="xb" id="cx" aria-label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-  <div class="msgs" id="ms"></div>
-  <div class="sug" id="sg"></div>
-  <a class="pm" href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">Prefer a private chat? Message Levi on Messenger &rarr;</a>
-  <div class="cf"><input id="ci" placeholder="Ask me anything..." maxlength="300" autocomplete="off"><button id="cs">SEND</button></div>
+  <div class="ovn glist"><div class="gw">
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>01 &middot; SALES PAGE ENGINE</b><small>Generates a long-form sales page from your offer details.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>02 &middot; AD-READY AUDITOR</b><small>Checks your funnel, checkout and Meta Pixel setup before you spend on ads.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>03 &middot; DIGITERA ROI VAULT V3</b><small>Projects your gross output and profit roadmap for your niche.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>04 &middot; 5:2:2 CREATIVE ENGINE</b><small>Video blueprints and ad copy prompts, ready to execute.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>05 &middot; PSYCHOLOGICAL STORY-SELLING MATRIX V5</b><small>A story-selling framework built on sales psychology.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>06 &middot; FUNNEL SPEED OPTIMIZATION ANALYZER</b><small>Estimates page-load risk before it hurts conversions.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>07 &middot; 15-COLOR CUSTOM FUNNEL CONFIGURATOR</b><small>Switch your funnel's brand theme with 15 colors and live preview.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>08 &middot; 48-HOUR AD PROFIT-PROTECTOR V2</b><small>A metrics audit that signals when to scale and when to stop an ad.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>09 &middot; 30-DAY ALGORITHM INCONSISTENCY TRACKER</b><small>Tracks your daily posting momentum.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>10 &middot; SCALE-UP PLAYBOOK ENGINE</b><small>Generates budget increments based on your actual performance.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc cta2" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>BROWSE THE STORE</b><small>See every tool and template in the Digitera store</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div></div>
 </div>
 
 <script>
 var ovs=document.querySelectorAll(".ov");
 function closeAll(){[].forEach.call(ovs,function(o){o.classList.remove("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a){a.style.transitionDelay="0ms"})})}
-function openOv(id){closeAll();var o=document.getElementById(id);o.classList.add("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a,i){a.style.transitionDelay=(100+i*60)+"ms"})}
+function openOv(id){closeAll();var o=document.getElementById(id);o.classList.add("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a,i){a.style.transitionDelay=(100+i*60)+"ms";setTimeout(function(){a.style.transitionDelay="0ms"},1100)})}
 [].forEach.call(document.querySelectorAll("[data-open]"),function(b){b.addEventListener("click",function(){openOv(b.getAttribute("data-open"))})});
 [].forEach.call(document.querySelectorAll("[data-close]"),function(b){b.addEventListener("click",closeAll)});
 [].forEach.call(document.querySelectorAll(".ovn a[href]"),function(a){a.addEventListener("click",closeAll)});
