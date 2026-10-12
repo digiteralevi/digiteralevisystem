@@ -111,6 +111,31 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .mbar{display:none}
 @media(max-width:900px){body{overflow-y:auto;height:auto;min-height:100%}.page{height:auto;min-height:100svh}.sp{min-height:20px}}
 @media(max-width:767px){.mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(5,3,10,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.mbar .cta{display:flex;justify-content:center;width:100%;padding:16px}.launch{bottom:84px;right:14px;padding:12px 16px}.page{padding-bottom:90px}}
+.pcs{display:grid;gap:10px}
+.pc{display:flex;justify-content:space-between;align-items:center;gap:14px;text-align:left;padding:16px 18px;width:100%;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;font:inherit;transition:border-color .2s,background .2s}
+.pc:hover{border-color:rgba(232,192,90,.6)}
+.pc.sel{border-color:#e8c05a;background:rgba(232,192,90,.1)}
+.pc b{display:block;font-size:15px;letter-spacing:.05em;font-weight:600}
+.pc small{display:block;color:rgba(255,255,255,.7);font-size:12px;margin-top:3px;letter-spacing:.02em;font-weight:400}
+.pc .pp{font-family:'basis33','Courier New',monospace;font-size:17px;color:#e8c05a;white-space:nowrap}
+.pc .l{display:flex;align-items:center;gap:12px;min-width:0}
+.tick{flex:none;width:18px;height:18px;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center}
+.pc.sel .tick{background:#e8c05a;border-color:#e8c05a}
+.tick svg{opacity:0}.pc.sel .tick svg{opacity:1}
+.stp2{display:flex;align-items:center;gap:10px;flex:none}
+.stp2 button{width:32px;height:32px;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:18px;line-height:1;cursor:pointer;background:none}
+.stp2 button:hover{border-color:#e8c05a}
+.pr-row{cursor:default}
+.pres{margin-top:16px;padding:22px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(232,192,90,.6)}
+.pres .lbl{font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.65)}
+.pres .tot{font-family:'basis33','Courier New',monospace;font-size:44px;line-height:1.1;margin:2px 0 4px}
+.pres .badge{display:inline-block;font-size:11px;letter-spacing:.08em;color:#e8c05a;border:1px solid rgba(232,192,90,.6);padding:3px 10px;margin-bottom:8px}
+.pres .ln{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:rgba(255,255,255,.8);padding:3px 0}
+.pres hr{border:0;border-top:1px solid rgba(255,255,255,.14);margin:12px 0}
+.pres ul{list-style:none;margin:0;padding:0;font-size:13px;color:rgba(255,255,255,.82)}
+.pres li{padding:2px 0 2px 18px;position:relative}.pres li::before{content:"+";position:absolute;left:0;color:#e8c05a}
+.pres .note{font-size:11.5px;color:rgba(255,255,255,.6);margin:12px 0 14px}
+.ovn a.cta{font-size:15px;letter-spacing:.1em;opacity:1}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -126,6 +151,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
       <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">STORE</a>
       <a data-open="apps">APPS</a>
       <a data-open="engines">ENGINES</a>
+      <a data-open="pricing">PRICING</a>
       <a class="navcta" href="onboarding.html">START A PROJECT</a>
     </div>
     <button class="burger" data-open="menu" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -151,7 +177,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
         <a class="cta" href="onboarding.html">START YOUR PROJECT <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1030" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <p class="ctan">Takes about 5 minutes. I reply with the next steps.</p>
         <div class="btns"><button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button></div>
-        <p class="trust">Automated store &middot; 10 live apps &middot; I reply personally on Messenger</p>
+        <p class="trust">Websites from &#8369;499 &middot; 10 live apps &middot; I reply personally on Messenger</p>
       </div>
     </div>
     <div class="foot">
@@ -168,6 +194,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     <a data-chat>ASK ME</a>
     <a data-open="apps">APPS</a>
     <a data-open="engines">ENGINES</a>
+    <a data-open="pricing">PRICING</a>
     <a class="hl" href="onboarding.html">START A PROJECT</a>
     <a href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">MESSAGE</a>
   </div>
@@ -209,6 +236,24 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     </div></div>
 </div>
 
+<div class="ov" id="pricing">
+  <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">PRICE ESTIMATOR</span><button class="xb" data-close aria-label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="ovn glist"><div class="gw">
+    <div class="gh px">1 &middot; WHAT DO YOU NEED?</div>
+    <div class="pcs" id="prS"></div>
+    <div id="prAdWrap" style="display:none"><div class="gh px" style="margin-top:20px">2 &middot; ADD WHAT YOU NEED</div><div class="pcs" id="prAd"></div></div>
+    <div class="pres" id="prRes"></div>
+  </div></div>
+</div>
+
+<div class="chat" id="chat" role="dialog" aria-label="Ask Levi">
+  <div class="ch"><div><b>ASK LEVI</b><small>AI assistant &middot; answers on Levi's behalf</small></div><button class="xb" id="cx" aria-label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="msgs" id="ms"></div>
+  <div class="sug" id="sg"></div>
+  <a class="pm" href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">Prefer a private chat? Message Levi on Messenger &rarr;</a>
+  <div class="cf"><input id="ci" placeholder="Ask me anything..." maxlength="300" autocomplete="off"><button id="cs">SEND</button></div>
+</div>
+
 <button class="launch" data-chat aria-label="Ask Levi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>ASK ME<span class="dot"></span></button>
 <div class="mbar"><a class="cta" href="onboarding.html">START YOUR PROJECT</a></div>
 
@@ -237,6 +282,68 @@ document.getElementById("cs").onclick=function(){send()};
 ci.addEventListener("keydown",function(e){if(e.key==="Enter")send()});
 document.getElementById("cx").onclick=function(){chat.classList.remove("on")};
 [].forEach.call(document.querySelectorAll("[data-chat]"),function(b){b.addEventListener("click",openChat)});
+(function(){
+var PRICE_CAP=4999,WEB=499,PAGE=250,MAXP=5,cur="website",add={},pages=0;
+var SV=[
+ {id:"invitation",name:"DIGITAL INVITATION",desc:"Elegant invitation website with countdown, program, RSVP and gallery.",price:500,tag:"",inc:["Elegant invitation website","Countdown, program, RSVP and gallery","One shareable link for all your guests"]},
+ {id:"app",name:"MINI GAME OR APP",desc:"A custom interactive game or mini app, like the ones in my live apps.",price:1000,tag:"",inc:["Custom interactive game or mini app","Works on phone and desktop","Live shareable link"]},
+ {id:"website",name:"WEBSITE + SALES FUNNEL",desc:"Premium website, sales page and a complete funnel. Add what you need.",price:WEB,tag:"FROM ",inc:["Modern, mobile-friendly premium design","Sales page and complete funnel structure","Conversion-focused layout and copy","Messenger and contact buttons","Live deployment on fast hosting"]}
+];
+var ADD=[
+ {id:"dom",name:"Custom domain setup",desc:"Your own .com or .ph address. Domain registration is billed separately at cost.",p:500},
+ {id:"bot",name:"AI chatbot",desc:"Answers your visitors anytime, like the Ask Me assistant on this site.",p:1000},
+ {id:"shop",name:"Online store with checkout",desc:"Products, cart, COD and GCash orders, and order notifications.",p:1500},
+ {id:"book",name:"Booking or reservation system",desc:"Pick a service, date and time, then send the request.",p:800},
+ {id:"dash",name:"Admin dashboard",desc:"See and manage your orders, bookings and leads in one place.",p:800},
+ {id:"lead",name:"Lead capture with email alerts",desc:"Every inquiry saved and sent straight to your inbox.",p:300},
+ {id:"vis",name:"Premium visuals",desc:"Video hero, custom animations and AI-generated brand images.",p:600}
+];
+var $=function(i){return document.getElementById(i)};
+var peso=function(n){return "\u20B1"+n.toLocaleString("en-PH")};
+var TICK='<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>';
+function build(){
+  $("prS").innerHTML="";
+  SV.forEach(function(v){
+    var b=document.createElement("button");b.type="button";b.className="pc"+(v.id===cur?" sel":"");
+    b.innerHTML='<span><b>'+v.name+'</b><small>'+v.desc+'</small></span><span class="pp">'+v.tag+peso(v.price)+'</span>';
+    b.onclick=function(){cur=v.id;build()};
+    $("prS").appendChild(b);
+  });
+  $("prAdWrap").style.display=cur==="website"?"block":"none";
+  var al=$("prAd");al.innerHTML="";
+  if(cur==="website"){
+    ADD.forEach(function(a){
+      var b=document.createElement("button");b.type="button";b.className="pc"+(add[a.id]?" sel":"");
+      b.innerHTML='<span class="l">'+TICK+'<span><b>'+a.name+'</b><small>'+a.desc+'</small></span></span><span class="pp">+'+peso(a.p)+'</span>';
+      b.onclick=function(){add[a.id]=!add[a.id];build()};
+      al.appendChild(b);
+    });
+    var r=document.createElement("div");r.className="pc pr-row"+(pages?" sel":"");
+    r.innerHTML='<span><b>Extra pages</b><small>'+peso(PAGE)+' each, up to '+MAXP+' pages (about, services, portfolio, contact...)</small></span><span class="stp2"><button type="button" data-d="-1" aria-label="Fewer pages">&minus;</button><b>'+pages+'</b><button type="button" data-d="1" aria-label="More pages">+</button></span>';
+    r.addEventListener("click",function(e){var d=e.target.closest("button[data-d]");if(!d)return;pages=Math.max(0,Math.min(MAXP,pages+(+d.dataset.d)));build()});
+    al.appendChild(r);
+  }
+  result();
+}
+function result(){
+  var v=SV.filter(function(x){return x.id===cur})[0],lines=[],raw=v.price,items=[];
+  lines.push([v.name+(cur==="website"?" (basic)":""),peso(v.price)]);
+  if(cur==="website"){
+    ADD.forEach(function(a){if(add[a.id]){raw+=a.p;lines.push([a.name,"+"+peso(a.p)]);items.push(a.name)}});
+    if(pages){var pp=pages*PAGE;raw+=pp;lines.push([pages+" extra page"+(pages>1?"s":""),"+"+peso(pp)]);items.push(pages+" extra pages")}
+  }
+  var total=cur==="website"?Math.min(raw,PRICE_CAP):raw,save=raw-total;
+  var h='<div class="lbl">ESTIMATED TOTAL</div><div class="tot">'+peso(total)+'</div>';
+  if(save>0)h+='<div class="badge">COMPLETE PACKAGE PRICE &middot; YOU SAVE '+peso(save)+'</div>';
+  lines.forEach(function(l){h+='<div class="ln"><span>'+l[0]+'</span><span>'+l[1]+'</span></div>'});
+  h+='<hr><ul>'+v.inc.map(function(i){return "<li>"+i+"</li>"}).join("")+'</ul>';
+  h+='<p class="note">This is an estimate. I confirm the final quote after reviewing your needs. Domain registration fees (if any) are billed separately at cost.</p>';
+  var href="onboarding.html?svc="+cur+"&est="+total+"&items="+encodeURIComponent(items.join(", "));
+  h+='<a class="cta" href="'+href+'">START WITH THIS ESTIMATE <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
+  $("prRes").innerHTML=h;
+}
+build();
+})();
 </script>
 </body>
 </html>
