@@ -3,13 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Digitera Levi - Web &amp; Automation</title>
+<title>Digitera Levi · Web &amp; Automation</title>
+<meta name="description" content="Websites, sales funnels, booking systems and AI tools for Filipino sellers and small businesses. Try my live apps.">
+<meta property="og:title" content="Digitera Levi · Web &amp; Automation">
+<meta property="og:description" content="Websites, sales funnels, booking systems and AI tools that help Filipino sellers look premium and close faster.">
+<meta property="og:image" content="https://res.cloudinary.com/dqo0bc4u/image/upload/w_1200,h_630,c_pad,b_rgb:07040f/v1784271943/Digitera_profile_gif_logo_jd7njm.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07040f">
+<link rel="icon" href="https://res.cloudinary.com/dqo0bc4u/image/upload/w_64,h_64,c_fill,r_max/v1784271943/Digitera_profile_gif_logo_jd7njm.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33" rel="stylesheet">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#000;--ink:#fff;--accent:#ef4444;--chip:#0b0b0b}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#000;--ink:#fff}}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#000;--ink:#fff;--accent:#e8c05a;--chip:#0b0b0b}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
@@ -47,13 +53,15 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .col{display:flex;flex-direction:column;gap:16px;justify-content:flex-end}
 .show{align-self:flex-start;display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.3);padding:12px 24px;background:rgba(255,255,255,.05);backdrop-filter:blur(4px);color:#fff;font:inherit;font-size:14px;letter-spacing:.08em;cursor:pointer;transition:background .2s}
 .show:hover{background:rgba(255,255,255,.1)}
+.show .new,.gc .new{font-size:10px;font-weight:700;letter-spacing:.12em;color:#1a1030;background:#e8c05a;padding:2px 7px}
+.gc .new{margin-left:8px;vertical-align:2px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:rgba(255,255,255,.8);align-self:flex-start}
 @media(min-width:1024px){.chips{align-self:flex-end}}
 .chip{background:var(--chip);padding:8px 14px;display:flex;align-items:center;gap:8px}
 .chip b{font-size:13px;letter-spacing:-.01em}.chip i{font-style:normal;color:rgba(255,255,255,.5);font-size:12px}
 .foot{margin-top:16px;display:grid;grid-template-columns:1fr;gap:8px;padding-top:16px;font-size:12px;color:rgba(255,255,255,.6)}
 @media(min-width:640px){.foot{grid-template-columns:1fr 1fr;gap:16px}.foot div:last-child{text-align:right}}
-.foot a{color:var(--accent);transition:color .2s}.foot a:hover{color:#f87171}
+.foot a{color:var(--accent);transition:color .2s}.foot a:hover{color:#fff3b0}
 .ov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.95);backdrop-filter:blur(12px);display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:all .5s cubic-bezier(.16,1,.3,1);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .ov.on{opacity:1;pointer-events:auto}
 .ovh{display:flex;align-items:center;justify-content:space-between;padding:24px}
@@ -109,6 +117,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 .launch .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pl 1.8s infinite}
 .chat.on + .launch{display:none}
 .mbar{display:none}
+@media(min-width:768px){.bot{padding-bottom:84px}}
 @media(max-width:900px){body{overflow-y:auto;height:auto;min-height:100%}.page{height:auto;min-height:100svh}.sp{min-height:20px}}
 @media(max-width:767px){.mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(5,3,10,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.mbar .cta{display:flex;justify-content:center;width:100%;padding:16px}.launch{bottom:84px;right:14px;padding:12px 16px}.page{padding-bottom:90px}}
 .pcs{display:grid;gap:10px}
@@ -142,7 +151,7 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 </head>
 <body>
 <div class="bg"></div>
-<video id="v" autoplay muted loop playsinline src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4"></video>
+<video id="v" autoplay muted loop playsinline></video>
 
 <img class="hi" id="hi" alt="Levi"><div class="fade" id="fd"></div>
 <div class="page">
@@ -150,9 +159,9 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     <a href="#" aria-label="Digitera Levi"><img class="lg" src="https://res.cloudinary.com/dqo0bc4u/image/upload/v1784271943/Digitera_profile_gif_logo_jd7njm.gif" alt="Digitera Levi"></a>
     <div class="links">
       <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">STORE</a>
-      <a data-open="apps">APPS</a>
-      <a data-open="engines">ENGINES</a>
-      <a data-open="pricing">PRICING</a>
+      <a href="#apps" data-open="apps">APPS</a>
+      <a href="#products" data-open="products">PRODUCTS</a>
+      <a href="#pricing" data-open="pricing">PRICING</a>
       <a class="navcta" href="onboarding.html">START A PROJECT</a>
     </div>
     <button class="burger" data-open="menu" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -161,12 +170,12 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
   <div class="meta">
     <div>
       <h2>DIGITERA<br><span class="px">LEVI</span></h2>
-      <div class="blurb px">Digitera Levi is my<br>personal brand.<br>Build. Share. Earn.</div>
+      <div class="blurb px">Build. Share. Earn.<br>Systems for Filipino<br>sellers and small businesses.</div>
     </div>
     <div class="r"><h2>WEB &amp;<br><span class="px">AUTOMATION</span></h2></div>
     <div><div class="lab px">What I Do</div><div class="body">I build websites, sales systems and AI tools that help Filipino sellers look premium and close faster.</div></div>
     <div class="r"><div class="lab px">Services</div>
-      <ul><li>Websites &amp; Online Stores</li><li>Sales &amp; Landing Pages</li><li>Digital Invitations</li><li>Custom Apps &amp; Automation</li><li>AI Chatbots</li><li>Link-in-Bio &amp; Portfolio</li></ul></div>
+      <ul><li>Websites &amp; Online Stores</li><li>Sales Pages &amp; Funnels</li><li>Booking Systems</li><li>Digital Invitations</li><li>Apps &amp; AI Chatbots</li><li>Link-in-Bio &amp; Portfolio</li></ul></div>
   </div>
 
   <div class="sp"></div>
@@ -177,8 +186,8 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
       <div class="col">
         <a class="cta" href="onboarding.html">START YOUR PROJECT <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1030" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <p class="ctan">Takes about 5 minutes. I reply with the next steps.</p>
-        <div class="btns"><button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button></div>
-        <p class="trust">Websites from &#8369;499 &middot; 12 live apps &middot; I reply personally on Messenger</p>
+        <div class="btns"><button class="show" data-open="apps"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>TRY MY LIVE APPS</button><a class="show" href="https://pahinabook.vercel.app/demo.html" target="_blank" rel="noopener"><span class="new">NEW</span>PAHINA BOOK DEMO</a></div>
+        <p class="trust">Websites from &#8369;499 &middot; 13 live apps &middot; I reply personally on Messenger</p>
       </div>
     </div>
     <div class="foot">
@@ -192,10 +201,10 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
   <div class="ovh"><img class="lg" src="https://res.cloudinary.com/dqo0bc4u/image/upload/v1784271943/Digitera_profile_gif_logo_jd7njm.gif" alt="Digitera Levi"><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
   <div class="ovn">
     <a href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener">STORE</a>
-    <a data-chat>ASK ME</a>
-    <a data-open="apps">APPS</a>
-    <a data-open="engines">ENGINES</a>
-    <a data-open="pricing">PRICING</a>
+    <a href="#ask" data-chat>ASK ME</a>
+    <a href="#apps" data-open="apps">APPS</a>
+    <a href="#products" data-open="products">PRODUCTS</a>
+    <a href="#pricing" data-open="pricing">PRICING</a>
     <a class="hl" href="onboarding.html">START A PROJECT</a>
     <a href="https://www.messenger.com/t/118441451362301/" target="_blank" rel="noopener">MESSAGE</a>
   </div>
@@ -207,10 +216,11 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
       <div class="gh px">WEBSITES &amp; SALES PAGES</div>
       <a class="gc" href="https://tasaco.vercel.app/" target="_blank" rel="noopener"><span><b>TASA &amp; CO.</b><small>Cafe website with menu, bundle discount and Messenger ordering</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://velocemotors-iota.vercel.app/" target="_blank" rel="noopener"><span><b>VELOCE MOTORS</b><small>Luxury car showroom with finder, financing calculator and test drive booking</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://marvies.vercel.app/" target="_blank" rel="noopener"><span><b>MARVIES BEAUTY LOUNGE </b><small>Direct-response sales page</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://marvies.vercel.app/" target="_blank" rel="noopener"><span><b>MARVIES BEAUTY LOUNGE</b><small>Direct-response sales page</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://viproiframeworkpage.vercel.app/" target="_blank" rel="noopener"><span><b>VIP ROI FRAMEWORK</b><small>Long-form sales page for a 10-engine suite</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://pahinabuilderpage.vercel.app/" target="_blank" rel="noopener"><span><b>PAHINA BUILDER SUITE</b><small>Sales funnel: long-form sales page with opt-in, upsell and thank-you steps</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <div class="gh px">BOOKING, STAYS &amp; INVITATIONS</div>
+      <a class="gc" href="https://pahinabook.vercel.app/demo.html" target="_blank" rel="noopener"><span><b>PAHINA BOOK<span class="new">NEW</span></b><small>Full booking system: staff calendar, deposits, payments, reports, reviews and promo codes. Live demo.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://maison-aurea-tau.vercel.app/" target="_blank" rel="noopener"><span><b>MAISON AUREA</b><small>Salon booking tool: pick services, date and time</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://sinagcove.vercel.app/" target="_blank" rel="noopener"><span><b>SINAG COVE</b><small>Resort and staycation website with live booking total</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc" href="https://e-invitation-psi.vercel.app/" target="_blank" rel="noopener"><span><b>DIGITAL INVITATION</b><small>Debut invitation website with RSVP and gallery</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
@@ -222,19 +232,13 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
     </div></div>
 </div>
 
-<div class="ov" id="engines">
-  <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">10 ENGINES &middot; VIP ROI SUITE</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+<div class="ov" id="products">
+  <div class="ovh"><span class="px" style="letter-spacing:.15em;color:rgba(255,255,255,.6)">READY-MADE PRODUCTS</span><button class="xb" data-close aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
   <div class="ovn glist"><div class="gw">
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>01 &middot; SALES PAGE ENGINE</b><small>Generates a long-form sales page from your offer details.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>02 &middot; AD-READY AUDITOR</b><small>Checks your funnel, checkout and Meta Pixel setup before you spend on ads.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>03 &middot; DIGITERA ROI VAULT V3</b><small>Projects your gross output and profit roadmap for your niche.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>04 &middot; 5:2:2 CREATIVE ENGINE</b><small>Video blueprints and ad copy prompts, ready to execute.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>05 &middot; PSYCHOLOGICAL STORY-SELLING MATRIX V5</b><small>A story-selling framework built on sales psychology.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>06 &middot; FUNNEL SPEED OPTIMIZATION ANALYZER</b><small>Estimates page-load risk before it hurts conversions.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>07 &middot; 15-COLOR CUSTOM FUNNEL CONFIGURATOR</b><small>Switch your funnel's brand theme with 15 colors and live preview.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>08 &middot; 48-HOUR AD PROFIT-PROTECTOR V2</b><small>A metrics audit that signals when to scale and when to stop an ad.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>09 &middot; 30-DAY ALGORITHM INCONSISTENCY TRACKER</b><small>Tracks your daily posting momentum.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      <a class="gc" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>10 &middot; SCALE-UP PLAYBOOK ENGINE</b><small>Generates budget increments based on your actual performance.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <div class="gh px">ONE PAYMENT. NO MONTHLY FEES.</div>
+      <a class="gc" href="https://pahinabook.vercel.app/demo.html" target="_blank" rel="noopener"><span><b>PAHINA BOOK<span class="new">NEW</span></b><small>Booking system for salons, clinics, studios and more. Try the live demo.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://pahinabuilderpage.vercel.app/" target="_blank" rel="noopener"><span><b>PAHINA BUILDER SUITE</b><small>Build high-converting sales pages and funnels for yourself or your clients.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="gc" href="https://viproiframeworkpage.vercel.app/" target="_blank" rel="noopener"><span><b>VIP ROI FRAMEWORK</b><small>10 engines for sales pages, ads, creatives and scaling, in one suite.</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a class="gc cta2" href="https://digitera-storefront.vercel.app/" target="_blank" rel="noopener"><span><b>BROWSE THE STORE</b><small>See every tool and template in the Digitera store</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8c05a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
     </div></div>
 </div>
@@ -264,9 +268,10 @@ h1 .px{font-size:1.25em;display:inline-block;line-height:1;vertical-align:baseli
 var ovs=document.querySelectorAll(".ov");
 function closeAll(){[].forEach.call(ovs,function(o){o.classList.remove("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a){a.style.transitionDelay="0ms"})})}
 function openOv(id){closeAll();var o=document.getElementById(id);o.classList.add("on");[].forEach.call(o.querySelectorAll(".ovn a"),function(a,i){a.style.transitionDelay=(100+i*60)+"ms";setTimeout(function(){a.style.transitionDelay="0ms"},1100)})}
-[].forEach.call(document.querySelectorAll("[data-open]"),function(b){b.addEventListener("click",function(){openOv(b.getAttribute("data-open"))})});
+[].forEach.call(document.querySelectorAll("[data-open]"),function(b){b.addEventListener("click",function(e){e.preventDefault();openOv(b.getAttribute("data-open"))})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeAll();chat.classList.remove("on")}});
 [].forEach.call(document.querySelectorAll("[data-close]"),function(b){b.addEventListener("click",closeAll)});
-[].forEach.call(document.querySelectorAll(".ovn a[href]"),function(a){a.addEventListener("click",closeAll)});
+[].forEach.call(document.querySelectorAll(".ovn a[href]:not([data-open]):not([data-chat])"),function(a){a.addEventListener("click",closeAll)});
 var HERO_IMAGE="";  // paste YOUR photo URL (Cloudinary) here
 var HERO_VIDEO="https://res.cloudinary.com/dqo0bc4u/video/upload/v1791505824/Person_opening_eyes_video_portrait_20261009081238_qn4dk1.mp4";
 var vd=document.getElementById("v");
@@ -284,7 +289,7 @@ fetch(CHAT_URL,{method:"POST",headers:{"Content-Type":"application/json",apikey:
 document.getElementById("cs").onclick=function(){send()};
 ci.addEventListener("keydown",function(e){if(e.key==="Enter")send()});
 document.getElementById("cx").onclick=function(){chat.classList.remove("on")};
-[].forEach.call(document.querySelectorAll("[data-chat]"),function(b){b.addEventListener("click",openChat)});
+[].forEach.call(document.querySelectorAll("[data-chat]"),function(b){b.addEventListener("click",function(e){e.preventDefault();openChat()})});
 (function(){var v=document.getElementById("v"),c=navigator.connection;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||(c&&c.saveData)){v.removeAttribute("autoplay");v.pause()}})();
 (function(){
 var PRICE_CAP=4999,WEB=499,PAGE=250,MAXP=5,cur="website",add={},pages=0;
@@ -297,7 +302,7 @@ var ADD=[
  {id:"dom",name:"Custom domain setup",desc:"Your own .com or .ph address. Domain registration is billed separately at cost.",p:500},
  {id:"bot",name:"AI chatbot",desc:"Answers your visitors anytime, like the Ask Me assistant on this site.",p:1000},
  {id:"shop",name:"Online store with checkout",desc:"Products, cart, COD and GCash orders, and order notifications.",p:1500},
- {id:"book",name:"Booking or reservation system",desc:"Pick a service, date and time, then send the request.",p:800},
+ {id:"book",name:"Booking or reservation system",desc:"Customers pick a service, date and time online. See Pahina Book in my live apps.",p:800},
  {id:"dash",name:"Admin dashboard",desc:"See and manage your orders, bookings and leads in one place.",p:800},
  {id:"lead",name:"Lead capture with email alerts",desc:"Every inquiry saved and sent straight to your inbox.",p:300},
  {id:"vis",name:"Premium visuals",desc:"Video hero, custom animations and AI-generated brand images.",p:600}
